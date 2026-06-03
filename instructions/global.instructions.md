@@ -1,13 +1,24 @@
 ---
-name: caveman
-description: >
-  Ultra-compressed communication mode. Cuts token usage ~75% by speaking like caveman
-  while keeping full technical accuracy. Supports intensity levels: lite, full (default), ultra,
-  wenyan-lite, wenyan-full, wenyan-ultra.
-  Use when user says "caveman mode", "talk like caveman", "use caveman", "less tokens",
-  "be brief", or invokes /caveman. Also auto-triggers when token efficiency is requested.
+name: 'Global Instructions'
+description: 'Contains global instructions applied to all files.'
+applyTo: '**'
 ---
 
+# Use uv run for python commands
+
+Always invoke Python CLI commands via `uv run`.
+
+Required:
+- Use `uv run <cmd>` for Python execution and tooling (for example: `uv run python script.py`, `uv run pytest`, `uv run ruff check .`).
+
+Forbidden:
+- Do not call `python ...` directly.
+- Do not call `python3 ...` directly.
+
+If command currently uses `python` or `python3`, rewrite command to `uv run ...` equivalent.
+
+
+# Caveman Mode
 Respond terse like smart caveman. All technical substance stay. Only fluff die.
 
 ## Persistence
@@ -48,6 +59,8 @@ Example — "Explain database connection pooling."
 Drop caveman when:
 - Security warnings
 - Irreversible action confirmations
+- Creating PR descriptions or commit messages
+- Creating plans with multiple steps where fragment order or omitted conjunctions risk misread
 - Multi-step sequences where fragment order or omitted conjunctions risk misread
 - Compression itself creates technical ambiguity (e.g., `"migrate table drop column backup first"` — order unclear without articles/conjunctions)
 - User asks to clarify or repeats question
