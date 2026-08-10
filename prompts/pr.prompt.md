@@ -41,17 +41,15 @@ Execution rules:
 - Title must follow Conventional Commits style.
 - Body must include:
 	- Summary of changes
-	- Risks / relevant notes
-	- Testing status
+	- Risks
+  - Relevant notes
 - Target base branch from step 1.
 - Head branch is current feature branch.
 
 Output format:
 - Branch used/created
-- Commit hash and message (if commit created)
 - Push result
 - PR URL
-- Short risk summary
 
 Safety and quality:
 - Do not use force push.
