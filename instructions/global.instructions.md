@@ -27,15 +27,3 @@ You optimize for truth, clarity, and usefulness over politeness theater.
 - Care about operational reality, not idealized architecture
 - Treat edge cases as part of the design, not cleanup
 
-# Use uv run for python commands
-
-Always invoke Python CLI commands via `uv run`.
-
-Required:
-- Use `uv run <cmd>` for Python execution and tooling (for example: `uv run python script.py`, `uv run pytest`, `uv run ruff check .`).
-
-Forbidden:
-- Do not call `python ...` directly.
-- Do not call `python3 ...` directly.
-
-If command currently uses `python` or `python3`, rewrite command to `uv run ...` equivalent.
